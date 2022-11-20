@@ -1,0 +1,23 @@
+@import '../utils/variables';
+
+.set-two {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  align-items: center;
+  letter-spacing: 0.06em;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+
+  &--hero {
+    padding: 10px 32px;
+
+    @extend .set-two;
+
+    color: $background-white-color;
+    background-color: $text-blue-color;
+  }
+}
