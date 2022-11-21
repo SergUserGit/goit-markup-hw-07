@@ -1,0 +1,63 @@
+@import '../utils/variables';
+
+ %set-four {
+  font-family: $font-roboto;
+  font-size: 14px;
+  line-height: 1.14286px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+ }
+
+.activity {
+  padding-top: 0;
+
+  background-color: $background-white-color;
+
+  &--indent {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    font-size: 36px;
+    line-height: 1.16667;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+
+  &-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+}
+
+.activity-list {
+
+  &__item {
+    list-style: none;
+  } 
+
+  &__background {
+    position: relative;
+  }
+
+  &__product {
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+  
+    padding-top: 27px;
+    padding-bottom: 27px;
+    width: 370px;
+  
+    background-color: $activity-background-color;
+    @extend %set-four;
+    color: $background-white-color;
+  }
+
+}

@@ -1,6 +1,6 @@
 @import '../utils/variables';
 
-.set-three {
+%set-three {
   position: absolute;
 
   width: 1px;
@@ -23,11 +23,51 @@
     }
 
     &__title { 
-      @extend .set-three; 
+      @extend %set-three; 
     }
 
     &-list {
       display: flex;
       gap: 30px;
     }
+   
+}
+
+
+.advantages-list {
+      &__item {
+         list-style: none; 
+      }
+
+      &__logo {
+        padding: 25px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      
+        background: $background-our-team;
+        border-radius: 4px;
+      }
+
+      &__icon {
+        width: 70px;
+        height: 70px;
+      }
+
+      &__name {
+        margin-bottom: 10px;
+
+        font-size: 14px;
+        line-height: 1.1428;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      &__description {
+        font-size: 14px;
+        line-height: 1.7143;
+        letter-spacing: 0.03em;
+        color: $text-head-color;
+      }
 }
