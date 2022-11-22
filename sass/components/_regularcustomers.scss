@@ -1,0 +1,94 @@
+@import '../utils/variables';
+
+.regular-customers {
+  background-color: $background-white-color;
+
+  &--indent {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    font-size: 36px;
+    line-height: 1.16667;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+}
+
+.customers-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--alignment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 0px;
+    height: 0px; 
+  }
+
+  &__icon--one {
+    width: 41px;
+    height: 46.7px;
+  }
+
+  &__icon--two {
+    width: 40px;
+    height: 52px;
+  }
+
+  &__icon--three {
+    width: 43.46px;
+    height: 41.18px;
+  }
+
+  &__icon--four {
+    width: 84.44px;
+    height: 40.62px;
+  }
+
+  &__icon--five {
+    width: 62.54px;
+    height: 45.43px;
+  }
+
+  &__icon--six {
+    width: 93.79px;
+    height: 43.93px;
+  }
+}
+
+.customers-list__ref {
+  transition: fill 250ms $timing-function;
+
+  fill: $company-border;
+
+  &--alignment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--geometry {
+    transition: border 250ms $timing-function, border-radius 250ms $timing-function;
+
+    display: block;
+    padding: 16px 32px;
+    width: 170px;
+    height: 92px;
+  
+    border: 1px solid $company-border;
+    border-radius: 4px;
+  }
+}

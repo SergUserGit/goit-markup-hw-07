@@ -1,0 +1,93 @@
+@import '../utils/variables';
+
+.our-team{
+  background-color: $background-our-team;
+
+  &--indent {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    font-size: 36px;
+    line-height: 1.16667;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+}
+
+.team-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--active {
+    width: 270px;
+
+    background: $background-white-color;
+    box-shadow: 0px 1px 3px $box-shadow-one, 0px 1px 1px $box-shadow-two, 0px 2px 1px $box-shadow-three;
+    border-radius: 0px 0px 4px 4px;
+  }
+
+  &__card {
+    padding: 30px 10px;
+  }
+
+  &__employee {
+    margin-bottom: 10px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.1875;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+
+  &__position {
+    margin-bottom: 16px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.1875;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $text-head-color;
+  }
+}
+
+.team-nets {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__ref {
+    transition: fill 250ms $timing-function;
+
+    fill: $company-border;
+  }
+
+  &__ref--geometry {
+    transition: background-color 250ms $timing-function, border-radius 250ms $timing-function;
+
+    display: block;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+  }
+
+  &__icon {
+    height: 20px;
+    width: 20px;
+  }
+}
