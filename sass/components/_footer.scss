@@ -1,0 +1,39 @@
+@import '../utils/variables';
+
+.footer {
+  background-color: $background-hero;
+}
+
+.footer-sections {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-address {
+  margin-right: 70px;
+  
+  &__logo {
+    padding-top: 60px;
+  }
+
+  &__ref {
+    text-decoration: none;
+  }
+
+  &__lable {
+    font-family: $font-raleway;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.1923;
+    letter-spacing: 0.03em;
+  }
+
+  &__lable--web {
+    color: $text-blue-color;
+  }
+
+  &__lable--studio {
+    color: $background-white-color;
+  }
+}
+

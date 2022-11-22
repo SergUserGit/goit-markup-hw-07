@@ -1,0 +1,127 @@
+@import '../utils/variables';
+
+.header {
+  border-bottom: 1px solid $border-color;
+  background-color: $background-white-color;
+
+  &__main {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header-logo {
+  margin-right: 95px;
+
+  &__ref {
+    text-decoration: none;
+  }
+
+  &__label {
+    font-family: $font-raleway;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.1923;
+    letter-spacing: 0.03em;
+  }
+
+  &__label--web {
+    color: $text-blue-color;
+  }
+
+  &__label--studio {
+    color: $text-black-color;
+  }
+}
+
+.nav {
+  display: flex;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--indent {
+    margin-right: 50px;
+  }
+
+  &__ref {
+    transition: color 250ms $timing-function;
+
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 31px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.1428;
+    letter-spacing: 0.02em;
+    color: $main-color;
+    text-decoration: none;
+  }
+
+  &__ref--position {
+    position: relative;
+  }
+}
+
+.contact {
+  margin-left: auto;
+  display: flex;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--alignment {
+    display: flex;
+    align-items: center;
+    margin-right: 49px;
+  }
+
+  &__ref {
+    transition: color 250ms $timing-function, fill 250ms $timing-function;
+
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 31px;
+
+    font-family: $font-roboto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.1428;
+    letter-spacing: 0.02em;
+    color: $text-head-color;
+    fill: $text-head-color;
+    text-decoration: none;
+  }
+
+  &__ref--transition {
+    transition: color 250ms $timing-function, fill 250ms $timing-function;
+
+    fill: $text-head-color;
+    color: $text-head-color;
+  }
+
+  &__icon {
+    display: block;
+    margin-right: 10px;
+
+    fill: currentColor;
+  }
+
+  &__icon--convert {
+    width: 16px;
+    height: 12px;
+  }
+
+  &__icon--telephone {
+    width: 10px;
+    height: 16px;
+  }
+
+  &__value {
+    display: block;
+  }
+}
