@@ -80,3 +80,135 @@
   margin-left: 40px;
   margin-bottom: 20px;
 }
+
+.modal-field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 4px;
+
+    font-family: $font-roboto;
+    font-size: 12px;
+    line-height: 1.166667;
+    letter-spacing: 0.01em;
+    color: $text-head-color;
+  }
+
+  &__element {
+    position: relative;
+  }
+
+  &__input {
+    width: 448px;
+    height: 40px;
+    padding-left: 42px;
+    outline: none;
+  
+    cursor: pointer;
+    border: 1px solid $border-input-color;
+    border-radius: 4px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 11px;
+    bottom: 11px;
+    left: 12px;
+  
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+  
+    fill: $main-color;
+  }
+}
+
+.modal-textarea {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 4px;
+
+    font-family: $font-roboto;
+    font-size: 12px;
+    line-height: 1.166667;
+    letter-spacing: 0.01em;
+    color: $text-head-color;
+  }
+
+  &__comment {
+    outline: none;
+    resize: none;
+    width: 448px;
+    height: 120px;
+    padding: 12px 16px;
+
+    font-family: $font-roboto;
+    font-size: 12px;
+    line-height: 1.1666;
+    letter-spacing: 0.01em;
+    color: $color-textarea;
+    border: 1px solid $border-input-color;
+    border-radius: 4px;
+  }
+ }
+
+ .modal-condition {
+  display: flex;
+  align-items: center;
+  margin-left: 52px;
+  margin-right: 51px;
+  margin-bottom: 30px;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    margin-right: 2px;
+
+    font-family: $font-roboto;
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+    color: $text-head-color;
+  }
+
+  &__input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-right: 8.38px;
+
+    cursor: pointer;
+    border: 2px solid $main-color;
+    border-radius: 4px;
+  }
+
+  &__ref {
+    font-family: $font-roboto;
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+    color: $text-blue-color;
+  }
+
+ }
