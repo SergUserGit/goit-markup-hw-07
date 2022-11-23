@@ -44,6 +44,11 @@
     border-radius: 4px;
   }
 
+  &--form-modal:hover,
+  &--form-modal:focus {
+    background-color: $button-color;
+  }
+
   &--portfolio {
     transition: color 250ms $timing-function, background-color 250ms $timing-function, box-shadow 250ms $timing-function;
 
@@ -57,6 +62,13 @@
     letter-spacing: 0.03em;
     border-radius: 4px;
     background-color: $background-our-team;
+  }
+
+  &--portfolio:hover,
+  &--portfolio:focus {
+    color: $background-white-color;
+    background-color: $text-blue-color;
+    box-shadow: 0px 6px 0px $background-our-team;
   }
 
   &--all {

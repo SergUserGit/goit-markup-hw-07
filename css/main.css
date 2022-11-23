@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -72,6 +73,9 @@ body {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
+.button--form-modal:hover, .button--form-modal:focus {
+  background-color: #188CE8;
+}
 .button--portfolio {
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -86,6 +90,12 @@ body {
   letter-spacing: 0.03em;
   border-radius: 4px;
   background-color: #F5F4FA;
+}
+.button--portfolio:hover, .button--portfolio:focus {
+  color: #FFFFFF;
+  background-color: #2196F3;
+  -webkit-box-shadow: 0px 6px 0px #F5F4FA;
+          box-shadow: 0px 6px 0px #F5F4FA;
 }
 .button--all {
   padding: 6px 25px;
@@ -335,6 +345,9 @@ body {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #AFB1B8;
 }
+.team-nets__ref:hover, .team-nets__ref:focus {
+  fill: #FFFFFF;
+}
 .team-nets__ref--geometry {
   -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -343,6 +356,10 @@ body {
   padding-top: 12px;
   padding-right: 12px;
   padding-bottom: 8px;
+}
+.team-nets__ref--geometry:hover, .team-nets__ref--geometry:focus {
+  background-color: #2196F3;
+  border-radius: 50%;
 }
 .team-nets__icon {
   height: 20px;
@@ -421,6 +438,10 @@ body {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #AFB1B8;
 }
+.customers-list__ref :hover,
+.customers-list__ref :focus {
+  fill: #2196F3;
+}
 .customers-list__ref--alignment {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -442,6 +463,10 @@ body {
   border: 1px solid #AFB1B8;
   border-radius: 4px;
 }
+.customers-list__ref--geometry:hover {
+  border: 1px solid #2196F3;
+  border-radius: 4px;
+}
 
 .backdrop {
   position: fixed;
@@ -457,6 +482,10 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+.backdrop--is-hidden .modal {
+  -webkit-transform: translate(-50%, -50%) scale(1.3);
+          transform: translate(-50%, -50%) scale(1.3);
 }
 
 .modal {
@@ -498,6 +527,13 @@ body {
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+.modal-button .modal-button__icon {
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button:hover .modal-button__icon, .modal-button:focus .modal-button__icon {
+  fill: #2196F3;
 }
 .modal-button__icon {
   width: 18px;
@@ -565,6 +601,21 @@ body {
   fill: #212121;
 }
 
+.modal-field__element .modal-field__icon {
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-field__element:focus-within .modal-field__icon, .modal-field__element:hover .modal-field__icon {
+  fill: #2196F3;
+}
+.modal-field__element .modal-field__input {
+  -webkit-transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-field__element:focus-within .modal-field__input, .modal-field__element:hover .modal-field__input {
+  border-color: #2196F3;
+}
+
 .modal-textarea {
   margin-bottom: 20px;
   display: -webkit-box;
@@ -597,6 +648,13 @@ body {
   color: rgba(117, 117, 117, 0.5);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+}
+.modal-textarea .modal-textarea__comment {
+  -webkit-transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-textarea:focus-within .modal-textarea__comment, .modal-textarea:hover .modal-textarea__comment {
+  border-color: #2196F3;
 }
 
 .modal-condition {
@@ -635,6 +693,13 @@ body {
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
           clip-path: inset(50%);
+}
+.modal-condition__input:checked + .modal-condition__icon {
+  border-color: transparent;
+  background-color: #2196F3;
+  background-image: url("../images/formchek.svg");
+  background-size: contain;
+  background-origin: border-box;
 }
 .modal-condition__icon {
   display: inline-block;
@@ -688,6 +753,9 @@ body {
 .portfolio-buttons__item--indent {
   margin-right: 8px;
 }
+.portfolio-buttons__item--indent:last-child {
+  margin-right: 0;
+}
 
 .portfolio-list {
   display: -webkit-box;
@@ -712,9 +780,39 @@ body {
   background: #FFFFFF;
   border: 1px solid #EEEEEE;
 }
+.portfolio-list__item--active:hover {
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .portfolio-list__overlay {
   position: relative;
   overflow: hidden;
+}
+.portfolio-list__overlay::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.";
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  padding: 63px 24px;
+  width: 100%;
+  height: 300px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 1.55555555;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+.portfolio-list__item--active:hover .portfolio-list__overlay::after {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .portfolio-list__card {
   margin: 20px 24px;
@@ -778,6 +876,9 @@ body {
 .nav__item--indent {
   margin-right: 50px;
 }
+.nav__item--indent:last-child {
+  margin-right: 0;
+}
 .nav__ref {
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -791,8 +892,21 @@ body {
   color: #212121;
   text-decoration: none;
 }
+.nav__ref:hover, .nav__ref:focus {
+  color: #2196F3;
+}
 .nav__ref--position {
   position: relative;
+}
+.nav__ref--position::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #2196F3;
 }
 
 .contact {
@@ -812,6 +926,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 49px;
+}
+.contact__item--alignment:last-child {
+  margin-right: 0;
 }
 .contact__ref {
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -833,11 +950,19 @@ body {
   fill: #757575;
   text-decoration: none;
 }
+.contact__ref:hover, .contact__ref:focus {
+  color: #2196F3;
+  fill: #2196F3;
+}
 .contact__ref--transition {
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #757575;
   color: #757575;
+}
+.contact__ref--transition:hover, .contact__ref--transition:focus {
+  fill: #2196F3;
+  color: #2196F3;
 }
 .contact__icon {
   display: block;
@@ -904,11 +1029,17 @@ body {
 .adress-list__item--indent {
   margin-bottom: 9px;
 }
+.adress-list__item--indent:last-child {
+  margin-bottom: 0;
+}
 .adress-list__ref {
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+}
+.adress-list__ref:hover, .adress-list__ref:focus {
+  color: #FFFFFF;
 }
 .adress-list__ref--font {
   font-size: 14px;
@@ -953,6 +1084,10 @@ body {
   padding-top: 12px;
   padding-right: 12px;
   padding-bottom: 8px;
+}
+.nets-list__ref--geometry:hover, .nets-list__ref--geometry:focus {
+  background-color: #2196F3;
+  border-radius: 50%;
 }
 .nets-list__ref--active {
   background-color: #44454E;

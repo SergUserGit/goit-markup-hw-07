@@ -76,6 +76,11 @@
     fill: $company-border;
   }
 
+  &__ref:hover,
+  &__ref:focus {
+    fill: $background-white-color;
+  }
+
   &__ref--geometry {
     transition: background-color 250ms $timing-function, border-radius 250ms $timing-function;
 
@@ -84,6 +89,12 @@
     padding-top: 12px;
     padding-right: 12px;
     padding-bottom: 8px;
+  }
+
+  &__ref--geometry:hover,
+  &__ref--geometry:focus {
+    background-color: $text-blue-color;
+    border-radius: 50%;
   }
 
   &__icon {

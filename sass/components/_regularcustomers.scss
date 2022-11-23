@@ -74,6 +74,11 @@
 
   fill: $company-border;
 
+  :hover,
+  :focus {
+    fill: $text-blue-color;
+  }
+
   &--alignment {
     display: flex;
     justify-content: center;
@@ -89,6 +94,11 @@
     height: 92px;
   
     border: 1px solid $company-border;
+    border-radius: 4px;
+  }
+
+  &--geometry:hover {
+    border: 1px solid $text-blue-color;
     border-radius: 4px;
   }
 }

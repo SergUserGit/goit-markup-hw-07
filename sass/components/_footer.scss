@@ -54,11 +54,20 @@
     margin-bottom: 9px;
   }
 
+  &__item--indent:last-child {
+    margin-bottom: 0;
+  }
+
   &__ref {
     transition: color 250ms $timing-function;
 
     color: $foter-color;
     text-decoration: none;
+  }
+
+  &__ref:hover,
+  &__ref:focus {
+    color: $background-white-color;
   }
 
   &__ref--font {
@@ -108,6 +117,12 @@
     padding-top: 12px;
     padding-right: 12px;
     padding-bottom: 8px;
+  }
+
+  &__ref--geometry:hover,
+  &__ref--geometry:focus {
+    background-color: $text-blue-color;
+    border-radius: 50%;
   }
 
   &__ref--active {
