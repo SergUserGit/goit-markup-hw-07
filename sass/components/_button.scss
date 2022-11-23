@@ -63,4 +63,18 @@
     padding: 6px 25px;
   }
 
+  &--mailing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none;
+    width: 200px;
+
+    background-color: $text-blue-color;
+    box-shadow: 0px 4px 4px $button-form-color;
+    border-radius: 4px; 
+  }
+
 }
