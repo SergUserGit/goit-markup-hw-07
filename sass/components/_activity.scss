@@ -1,13 +1,19 @@
 @import '../utils/variables';
 
- %set-four {
-  font-family: $font-roboto;
-  font-size: 14px;
-  line-height: 1.14286px;
-  text-align: center;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
- }
+@mixin textfont($align,$spacing) {
+  text-align: $align;
+  letter-spacing: $spacing;
+} 
+
+@mixin textsize($lineheight,$fontsize) {
+  line-height: $lineheight;
+  font-size: $fontsize;
+} 
+
+@mixin padding($top,$bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+} 
 
 .activity {
   padding-top: 0;
@@ -15,17 +21,15 @@
   background-color: $background-white-color;
 
   &--indent {
-    padding-top: 94px;
-    padding-bottom: 94px;
+    @include padding(94px,94px);
   }
 
   &__title {
     margin-bottom: 50px;
 
-    font-size: 36px;
-    line-height: 1.16667;
-    text-align: center;
-    letter-spacing: 0.03em;
+    @include textsize(1.16667,36px);
+    @include textfont(center,0.03em);
+
   }
 
   &-list {
@@ -50,13 +54,13 @@
     position: absolute;
     bottom: 3px;
     right: 0;
-  
-    padding-top: 27px;
-    padding-bottom: 27px;
+    @include padding(27px,27px);
     width: 370px;
-  
     background-color: $activity-background-color;
-    @extend %set-four;
+    font-family: $font-roboto;
+    @include textsize(1.14286,14px);
+    @include textfont(center,0.03em);
+    text-transform: uppercase;
     color: $background-white-color;
   }
 

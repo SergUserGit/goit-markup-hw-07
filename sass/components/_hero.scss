@@ -1,13 +1,5 @@
 @import '../utils/variables';
 
-%set-one { 
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.3636;
-  letter-spacing: 0.06em;
-  text-transform: uppercase; 
-}
-
 .hero {
 
   padding-top: 200px;
@@ -33,7 +25,11 @@
     max-width: 696px;
     margin: 0 auto 30px;
 
-    @extend %set-one;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.3636;
+    letter-spacing: 0.06em;
+    text-transform: uppercase; 
 
     color: $background-white-color;
 

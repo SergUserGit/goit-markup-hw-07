@@ -1,14 +1,19 @@
 @import '../utils/variables';
 
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+
+
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   transition: opacity 250ms $timing-function, visibility 250ms $timing-function;
 
-  width: 100%;
-  height: 100%;
-
+  @include geometry(100%, 100%);
   background-color: $box-shadow-three;
 
   &--is-hidden {
@@ -43,8 +48,8 @@
   right: 0;
 
   display: flex;
-  width: 30px;
-  height: 30px;
+  @include geometry(30px, 30px);
+  
   justify-content: center;
   align-items: center;
   margin-top: 8px;
@@ -66,8 +71,8 @@
 
 
   &__icon {
-    width: 18px;
-    height: 18px;
+
+    @include geometry(18px, 18px);
 
     fill: $text-black-color;
   }
@@ -118,8 +123,7 @@
   }
 
   &__input {
-    width: 448px;
-    height: 40px;
+    @include geometry(448px, 40px);
     padding-left: 42px;
     outline: none;
   
@@ -135,9 +139,8 @@
     left: 12px;
   
     display: inline-block;
-    width: 18px;
-    height: 18px;
-  
+
+    @include geometry(18px, 18px);
     fill: $main-color;
   }
 }
@@ -182,8 +185,7 @@
   &__comment {
     outline: none;
     resize: none;
-    width: 448px;
-    height: 120px;
+    @include geometry(448px, 120px);
     padding: 12px 16px;
 
     font-family: $font-roboto;
@@ -230,8 +232,7 @@
   &__input {
     position: absolute;
 
-    width: 1px;
-    height: 1px;
+    @include geometry(1px, 1px);
     margin: -1px;
 
     white-space: nowrap;
@@ -251,8 +252,8 @@
 
   &__icon {
     display: inline-block;
-    width: 16px;
-    height: 15px;
+
+    @include geometry(16px, 15px);
     margin-right: 8.38px;
 
     cursor: pointer;

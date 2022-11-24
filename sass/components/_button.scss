@@ -1,11 +1,25 @@
 @import '../utils/variables';
 
-%set-two {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.875;
-  align-items: center;
-  letter-spacing: 0.06em;
+@mixin font($fontweight,$fontsize,$lineheight,$letterspacing) {
+  font-weight: $fontweight;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+@mixin color($color,$backgroundcolor) {
+  color: $color;
+  background-color: $backgroundcolor;  
+}
+
+@mixin shadowradius($sizeone,$sizetwo,$sizethree,$color,$radius) {
+  box-shadow: $sizeone $sizetwo $sizethree $color;
+  border-radius: $radius;
+}
+
+@mixin padding($sizeone,$sizetwo,$align) {
+  padding: $sizeone $sizetwo;
+  align-items: $align;
 }
 
 .button {
@@ -13,12 +27,9 @@
   border: none;
 
   &--hero {
-    padding: 10px 32px;
-
-    @extend %set-two;
-
-    color: $background-white-color;
-    background-color: $text-blue-color;
+    @include padding(10px,32px,center);
+    @include font(700,16px,1.875,0.06em);
+    @include color($background-white-color,$text-blue-color);
   }
 
   &--form-modal {
@@ -26,22 +37,17 @@
 
     outline: none;
     display: flex;
-    align-items: center;
-    padding: 10px 52px;
+    @include padding(10px,52px,center);
+   
     margin-left: 164px;
     margin-right: 164px;
     margin-bottom: 40px;
 
     font-family: $font-roboto;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.875;
+    @include font(700,16px,1.875,0.06em);
     text-align: center;
-    letter-spacing: 0.06em;
-    color: $background-white-color;
-    background: $text-blue-color;
-    box-shadow: 0px 4px 4px $button-form-color;
-    border-radius: 4px;
+    @include color($background-white-color,$text-blue-color);
+    @include shadowradius(0px,4px,4px,$button-form-color,4px);
   }
 
   &--form-modal:hover,
@@ -54,20 +60,15 @@
 
     padding: 6px 22px;
 
-    color: $main-color;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.625;
+    @include color($main-color, $background-our-team);
+    @include font(500,16px,1.625,0.03em);
     text-align: center;
-    letter-spacing: 0.03em;
     border-radius: 4px;
-    background-color: $background-our-team;
   }
 
   &--portfolio:hover,
   &--portfolio:focus {
-    color: $background-white-color;
-    background-color: $text-blue-color;
+    @include color($background-white-color, $text-blue-color);
     box-shadow: 0px 6px 0px $background-our-team;
   }
 
@@ -85,8 +86,8 @@
     width: 200px;
 
     background-color: $text-blue-color;
-    box-shadow: 0px 4px 4px $button-form-color;
-    border-radius: 4px; 
+
+    @include shadowradius(0px,4px,4px,$button-form-color,4px);
   }
 
 }

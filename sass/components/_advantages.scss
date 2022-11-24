@@ -1,17 +1,14 @@
 @import '../utils/variables';
 
-%set-three {
-  position: absolute;
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height;
+} 
 
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-
-  white-space: nowrap;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+@mixin textsize($fontsize,$lineheight,$letterspacing) {
+  font-size: $fontsize;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
 }
 
 .advantages {
@@ -23,7 +20,17 @@
     }
 
     &__title { 
-      @extend %set-three; 
+      position: absolute;
+
+      @include geometry(1px,1px);
+      margin: -1px;
+      
+      
+      white-space: nowrap;
+      overflow: hidden;
+      border: 0;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%); 
     }
 
     &-list {
@@ -32,7 +39,6 @@
     }
    
 }
-
 
 .advantages-list {
       &__item {
@@ -51,23 +57,19 @@
       }
 
       &__icon {
-        width: 70px;
-        height: 70px;
+        @include geometry(70px,70px);
       }
 
       &__name {
         margin-bottom: 10px;
 
-        font-size: 14px;
-        line-height: 1.1428;
-        letter-spacing: 0.03em;
+        @include textsize(14px,1.1428,0.03em);
+
         text-transform: uppercase;
       }
 
       &__description {
-        font-size: 14px;
-        line-height: 1.7143;
-        letter-spacing: 0.03em;
+        @include textsize(14px,1.7143,0.03em);
         color: $text-head-color;
       }
 }

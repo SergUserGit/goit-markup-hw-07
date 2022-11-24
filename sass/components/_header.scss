@@ -1,12 +1,42 @@
 @import '../utils/variables';
 
+@mixin displayalign($display,$align) {
+  display: $display;
+  align-items: $align;
+}
+
+@mixin fillcolor($fill,$color) {
+  fill: $fill;
+  color: $color;
+}
+
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin padding($top,$bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin font($fontsize,$lineheight,$letterspacing) {
+  font-size: $fontsize;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+@mixin familyweight($family,$weight) {
+  font-family: $family;
+  font-weight: $weight;
+}
+
 .header {
   border-bottom: 1px solid $border-color;
   background-color: $background-white-color;
 
   &__main {
-    display: flex;
-    align-items: center;
+    @include displayalign(flex,center);
   }
 }
 
@@ -18,11 +48,8 @@
   }
 
   &__label {
-    font-family: $font-raleway;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.1923;
-    letter-spacing: 0.03em;
+    @include familyweight($font-raleway,700);
+    @include font(26px,1.1923,0.03em);
   }
 
   &__label--web {
@@ -53,13 +80,13 @@
     transition: color 250ms $timing-function;
 
     display: block;
-    padding-top: 32px;
-    padding-bottom: 31px;
+
+    @include padding(32px,31px);
 
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.1428;
-    letter-spacing: 0.02em;
+
+    @include font(14px,1.1428,0.02em);
+
     color: $main-color;
     text-decoration: none;
   }
@@ -80,9 +107,7 @@
     bottom: -1px;
 
     display: block;
-    width: 100%;
-    height: 4px;
-
+    @include geometry(100%,4px);
     background-color: $text-blue-color;
   } 
 }
@@ -108,39 +133,31 @@
   &__ref {
     transition: color 250ms $timing-function, fill 250ms $timing-function;
 
-    display: flex;
-    align-items: center;
-    padding-top: 32px;
-    padding-bottom: 31px;
+    @include displayalign(flex,center);
+    @include padding(32px,31px);
+    
+    @include familyweight($font-roboto,500);
 
-    font-family: $font-roboto;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.1428;
-    letter-spacing: 0.02em;
-    color: $text-head-color;
-    fill: $text-head-color;
+    @include font(14px,1.1428,0.02em);
+    @include fillcolor($text-head-color,$text-head-color);
     text-decoration: none;
   }
 
   &__ref:hover,
   &__ref:focus {
-    color: $text-blue-color;
-    fill:  $text-blue-color;
+    @include fillcolor($text-blue-color,$text-blue-color);
   }
 
 
   &__ref--transition {
     transition: color 250ms $timing-function, fill 250ms $timing-function;
 
-    fill: $text-head-color;
-    color: $text-head-color;
+    @include fillcolor($text-head-color,$text-head-color);
   }
 
   &__ref--transition:hover,
   &__ref--transition:focus {
-    fill: $text-blue-color;
-    color: $text-blue-color;
+    @include fillcolor( $text-blue-color,$text-blue-color);
   }
 
   &__icon {
@@ -151,13 +168,11 @@
   }
 
   &__icon--convert {
-    width: 16px;
-    height: 12px;
+    @include geometry(16px,12px);
   }
 
   &__icon--telephone {
-    width: 10px;
-    height: 16px;
+    @include geometry(10px,16px);
   }
 
   &__value {
