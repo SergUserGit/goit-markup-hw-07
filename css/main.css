@@ -504,19 +504,19 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 30px;
   height: 30px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-top: 8px;
   margin-right: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 .modal-button .modal-button__icon {
@@ -534,9 +534,9 @@ body {
 
 .modal-form__title {
   margin-top: 40px;
-  margin-bottom: 12px;
   margin-right: 40px;
   margin-left: 40px;
+  margin-bottom: 12px;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   line-height: 1.15;
@@ -551,10 +551,10 @@ body {
 }
 
 .modal-field {
-  margin-bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -584,8 +584,8 @@ body {
 .modal-field__icon {
   position: absolute;
   top: 11px;
-  bottom: 11px;
   left: 12px;
+  bottom: 11px;
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -608,10 +608,10 @@ body {
 }
 
 .modal-textarea {
-  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 20px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -655,8 +655,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 52px;
   margin-right: 51px;
+  margin-left: 52px;
   margin-bottom: 30px;
 }
 .modal-condition__label {

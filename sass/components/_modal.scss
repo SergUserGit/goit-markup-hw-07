@@ -12,10 +12,36 @@
   letter-spacing: $letterspacing;
 }
 
+@mixin margin($right,$left,$bottom) {
+  margin-right: $right;
+  margin-left: $left;
+  margin-bottom: $bottom;
+}
+
+@mixin borderradius($size,$border,$color,$radius) {
+  border: $size $border $color;
+  border-radius: $radius;
+}
+
+@mixin position($position,$top,$left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin displayalign($display,$align) {
+  display: $display;
+  align-items: $align;
+}
+
+@mixin displaymargin($display,$margin) {
+   display: $display;
+   margin-bottom: $margin;
+}
+
+
 .backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
+  @include position(fixed,0,0);
   transition: opacity 250ms $timing-function, visibility 250ms $timing-function;
 
   @include geometry(100%, 100%);
@@ -33,9 +59,9 @@
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+
+  @include position(absolute,50%,50%);
+
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms $timing-function;
 
@@ -48,21 +74,21 @@
 }
 
 .modal-button {
+
   position: absolute;
   top: 0;
   right: 0;
 
-  display: flex;
+  @include displayalign(flex,center);
   @include geometry(30px, 30px);
   
   justify-content: center;
-  align-items: center;
   margin-top: 8px;
   margin-right: 8px;
 
-  border-radius: 50%;
+  @include borderradius(1px,solid,$border-close-color,50%);
+
   background-color: $background-white-color;
-  border: 1px solid $border-close-color;
   cursor: pointer;
 
   & .modal-button__icon {
@@ -87,32 +113,24 @@
 
   &__title {
     margin-top: 40px;
-    margin-bottom: 12px;
-    margin-right: 40px;
-    margin-left: 40px;
-
+    @include margin(40px,40px,12px);
     @include font($font-roboto,20px,1.15,0.03em);
     text-align: center;
   }
 }
 
 .modal-group {
-  margin-right: 40px;
-  margin-left: 40px;
-  margin-bottom: 20px;
+  @include margin(40px,40px,20px);
 }
 
 .modal-field {
-  margin-bottom: 10px;
-  display: flex;
+
+  @include displaymargin(flex,10px);
   flex-direction: column;
 
-  
-
   &__label {
-    display: inline-block;
-    margin-bottom: 4px;
 
+    @include displaymargin(inline-block,4px);
     @include font($font-roboto,12px,1.166667,0.01em);
     color: $text-head-color;
   }
@@ -127,16 +145,15 @@
     outline: none;
   
     cursor: pointer;
-    border: 1px solid $border-input-color;
-    border-radius: 4px;
+
+    @include borderradius(1px,solid,$border-input-color,4px);
   }
 
   &__icon {
-    position: absolute;
-    top: 11px;
+
+    @include position(absolute,11px,12px);
     bottom: 11px;
-    left: 12px;
-  
+    
     display: inline-block;
 
     @include geometry(18px, 18px);
@@ -166,14 +183,13 @@
 }
   
 .modal-textarea {
-  margin-bottom: 20px;
-  display: flex;
+
+  @include displaymargin(flex,20px);
   flex-direction: column;
 
   &__label {
-    display: inline-block;
-    margin-bottom: 4px;
 
+    @include displaymargin(inline-block,4px);
     @include font($font-roboto,12px,1.166667,0.01em);
     color: $text-head-color;
   }
@@ -187,8 +203,9 @@
     @include font($font-roboto,12px,1.1666,0.01em);
 
     color: $color-textarea;
-    border: 1px solid $border-input-color;
-    border-radius: 4px;
+
+    @include borderradius(1px,solid,$border-input-color,4px);
+  
   }
 
   & .modal-textarea__comment {
@@ -202,15 +219,15 @@
  }
 
   .modal-condition {
-  display: flex;
-  align-items: center;
-  margin-left: 52px;
-  margin-right: 51px;
-  margin-bottom: 30px;
+
+    @include displayalign(flex,center);  
+
+
+    @include margin(51px,52px,30px);
 
   &__label {
-    display: flex;
-    align-items: center;
+
+    @include displayalign(flex,center);
     margin-right: 2px;
 
     @include font($font-roboto,14px,1.714,0.03em);
@@ -245,8 +262,9 @@
     margin-right: 8.38px;
 
     cursor: pointer;
-    border: 2px solid $main-color;
-    border-radius: 4px;
+
+    @include borderradius(2px,solid,$main-color,4px);
+
   }
 
   &__ref {
