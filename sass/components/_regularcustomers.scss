@@ -1,5 +1,28 @@
 @import '../utils/variables';
 
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height; 
+}
+
+@mixin borderradius($size,$border,$color,$radius) {
+  border: $size $border $color;
+  border-radius: $radius;
+}
+
+@mixin displayjustify($display,$justify,$align) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font($size,$lineheight,$align,$letterspacing) {
+  font-size: $size;
+  line-height: $lineheight;
+  text-align: $align;
+  letter-spacing: $letterspacing;
+}
+
 .regular-customers {
   background-color: $background-white-color;
 
@@ -11,10 +34,8 @@
   &__title {
     margin-bottom: 50px;
 
-    font-size: 36px;
-    line-height: 1.16667;
-    text-align: center;
-    letter-spacing: 0.03em;
+    @include font(36px,1.16667,center,0.03em);
+
   }
 }
 
@@ -28,44 +49,37 @@
   }
 
   &__item--alignment {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    @include displayjustify(flex,center,center);
+
   }
 
   &__icon {
-    width: 0px;
-    height: 0px; 
+    @include geometry(0px,0px);
   }
 
   &__icon--one {
-    width: 41px;
-    height: 46.7px;
+    @include geometry(41px,46.7px);
   }
 
   &__icon--two {
-    width: 40px;
-    height: 52px;
+    @include geometry(40px,52px);
   }
 
   &__icon--three {
-    width: 43.46px;
-    height: 41.18px;
+    @include geometry(43.46px,41.18px);
   }
 
   &__icon--four {
-    width: 84.44px;
-    height: 40.62px;
+    @include geometry(84.44px,40.62px);
   }
 
   &__icon--five {
-    width: 62.54px;
-    height: 45.43px;
+    @include geometry(62.54px,45.43px);
   }
 
   &__icon--six {
-    width: 93.79px;
-    height: 43.93px;
+    @include geometry(93.79px,43.93px);
   }
 }
 
@@ -74,25 +88,24 @@
   fill: $company-border;
 
   &--alignment {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    @include displayjustify(flex,center,center);
+
   }
 
   &--geometry {
     transition: border 250ms $timing-function, border-radius 250ms $timing-function;
 
     padding: 16px 32px;
-    width: 170px;
-    height: 92px;
-  
-    border: 1px solid $company-border;
-    border-radius: 4px;
+    @include geometry(170px,92px);
+   
+    @include borderradius(1px,solid,$company-border,4px);
   }
 
   &--geometry:hover {
-    border: 1px solid $text-blue-color;
-    border-radius: 4px;
+
+    @include borderradius(1px,solid,$text-blue-color,4px);
+
   }
   
 }

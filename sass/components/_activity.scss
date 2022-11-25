@@ -21,7 +21,7 @@
   background-color: $background-white-color;
 
   &--indent {
-    @include padding(94px,94px);
+    @include padding(0px,94px);
   }
 
   &__title {

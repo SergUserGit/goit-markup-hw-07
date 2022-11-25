@@ -1,5 +1,27 @@
 @import '../utils/variables';
 
+
+@mixin font($size,$lineheight,$letterspacing) {
+  font-size: $size;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin displayjustify($display,$justify) {
+  display: $display;
+  justify-content: $justify;
+}
+
+@mixin position($position,$overflow) {
+  position: $position;
+  overflow: $overflow;
+}
+
 .portfolio {
   background-color: $background-white-color;
 
@@ -9,14 +31,12 @@
   }
 
   &__title {
-    position: absolute;
+    @include position(absolute,hidden);
 
-    width: 1px;
-    height: 1px;
+    @include geometry(1px,1px);
     margin: -1px;
   
     white-space: nowrap;
-    overflow: hidden;
     border: 0;
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -25,8 +45,7 @@
 }
 
 .portfolio-buttons {
-  display: flex;
-  justify-content: center;
+  @include displayjustify(flex,center);
   margin-bottom: 50px;
 
   &__item {
@@ -43,9 +62,9 @@
 }
 
 .portfolio-list {
-  display: flex;
+
+  @include displayjustify(flex,space-between);
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 30px;
 
   &__item {
@@ -66,8 +85,9 @@
   }
 
   &__overlay {
-    position: relative;
-    overflow: hidden;
+
+    @include position(relative,hidden);
+   
   }
 
   &__overlay::after {
@@ -80,13 +100,12 @@
   
     display: block;
     padding: 63px 24px;
-    width: 100%;
-    height: 300px;
-  
+
+    @include geometry(100%,300px);
+
     font-family: $font-roboto;
-    font-size: 18px;
-    line-height: 1.55555555;
-    letter-spacing: 0.03em;
+
+    @include font(18px,1.55555555,0.03em);
     color: $background-white-color;
     background-color: $overlay-portfolio-color;
   }
@@ -104,16 +123,13 @@
   &__product {
     margin-bottom: 4px;
 
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
+    @include font(18px,2,0.06em);
   }
 
   &__category {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 1.875;
-    letter-spacing: 0.03em;
+
+    @include font(16px,1.875,0.03em);
     color: $text-head-color;
   }
 }
